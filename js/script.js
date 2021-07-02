@@ -11,7 +11,9 @@
 
 // var price = document.getElementById(cost - km)
 
-
+var priceMesage = 'Il costo del to biglietto è';
+var discountMesage = 'Il tuo sconto è di ';
+var priceDisplay = document.getElementById('total');
 
 var age = prompt("Inserisci la tua età");
 console.log('age');
@@ -23,8 +25,26 @@ var elementoTicket = document.getElementById('prezzo-ticket');
 
 elementoTicket.innerText = 'Il prezzo del tuo ticket è:' + prezzoTicket;
 
-var x = 18;
-var y = 65;
+if (age > 65) {
+
+    prezzoTicket = prezzoTicket * 0.6;
+    console.log('scontato', prezzoTicket);
+    discountMesage += '40%';
+}
+
+if (age < 18) {
+    prezzoTicket *= 0.8;
+    console.log('scontato', prezzoTicket);
+    discountMesage += '20%';
+}
+
+if (isNaN(age) || isNaN(km) || age < 1 || km < 1) {
+    alert('Dati inseriti erroneamente');
+}
+
+
+
+
 
 
 
